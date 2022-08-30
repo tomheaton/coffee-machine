@@ -1,7 +1,7 @@
 class CoffeeMachine:
     power: bool = False
-    water_capacity: int = 100
     water: int = 0
+    water_capacity: int = 100
 
     def __init__(self):
         print("Coffee Machine created.")
