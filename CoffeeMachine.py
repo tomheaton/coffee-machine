@@ -2,6 +2,7 @@ class CoffeeMachine:
     power: bool = False
     water: int = 0
     water_capacity: int = 100
+    durability: int = 0
 
     def __init__(self):
         print("Coffee Machine created.")
@@ -11,6 +12,9 @@ class CoffeeMachine:
 
     def turn_off(self) -> None:
         self.power = True
+
+    def clean(self) -> None:
+        self.durability = 0
 
     def add_water(self, water: int) -> None:
         self.water = min(self.water_capacity, self.water + water)
@@ -28,5 +32,7 @@ class CoffeeMachine:
 
         for i in range(0, 3):
             self.water = max(0, self.water - water_to_use)
+
+        self.durability += 1
 
         print("brewing done")

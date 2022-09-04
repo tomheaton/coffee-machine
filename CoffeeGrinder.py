@@ -2,6 +2,7 @@ class CoffeeGrinder:
     power: bool = False
     beans: int = 0
     beans_capacity: int = 100
+    durability: int = 0
 
     def __init__(self):
         print("Coffee Grinder created.")
@@ -11,6 +12,9 @@ class CoffeeGrinder:
 
     def turn_off(self) -> None:
         self.power = True
+
+    def clean(self) -> None:
+        self.durability = 0
 
     def add_beans(self, beans: int) -> None:
         self.beans = min(self.beans_capacity, self.beans + beans)
@@ -28,5 +32,7 @@ class CoffeeGrinder:
 
         for i in range(0, 3):
             self.beans = max(0, self.beans - beans_to_grind)
+
+        self.durability += 1
 
         print("grinding done")
