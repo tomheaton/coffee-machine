@@ -16,4 +16,17 @@ class CoffeeGrinder:
         self.beans = min(self.beans_capacity, self.beans + beans)
 
     def grind_beans(self) -> None:
+        if not self.power:
+            raise Exception("power is off")
+
+        if self.beans == 0:
+            raise Exception("not enough beans")
+
         print("grinding beans...")
+
+        beans_to_grind: int = 20
+
+        for i in range(0, 3):
+            self.beans = max(0, self.beans - beans_to_grind)
+
+        print("grinding done")

@@ -29,4 +29,4 @@ class CoffeeMachine:
         for i in range(0, 3):
             self.water = max(0, self.water - water_to_use)
 
-        print("coffee done")
+        print("brewing done")
